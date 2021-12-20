@@ -1,0 +1,10 @@
+<header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Bienvenidos a BookZone!</div>
+                 <div class="masthead-subheading" th:if="${session.usuariosession != null}" th:text="${session.usuariosession.nombre + ' ' +session.usuariosession.apellido}"></div>
+                <div class="masthead-heading text-uppercase">Deja volar tu imaginacion!</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="/registro" th:if="${session.usuariosession == null}">Registrate!</a>
+                <a href="@{/cliente/editar-perfil(id=__${session.usuariosession.id}__)}" th:if="${session.usuariosession != null}"class="btn btn-primary btn-xl text-uppercase">Configura tu perfil</a>
+                <a th:href="@{/prestamo/form(id=__${session.usuariosession.id}__)}" th:if="${session.usuariosession != null}"class="btn btn-primary btn-xl text-uppercase">Prestamo</a>
+            </div>
+        </header>

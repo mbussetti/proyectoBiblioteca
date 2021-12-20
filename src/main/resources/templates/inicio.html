@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="/fragments/head :: head"></head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav th:replace="/fragments/navbar :: nav"></nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">USUARIO LOGUEADO</div>
+                 <div class="masthead-subheading" th:if="${session.usuariosession != null}" th:text="${session.usuariosession.nombre + ' ' +session.usuariosession.apellido}"></div>
+                <div class="masthead-heading text-uppercase">Hechale un vistazo a nuestros libros mas populares!</div>
+                <a class="btn btn-primary btn-xl text-uppercase" href="/registro" th:if="${session.usuariosession == null}">Registrate!</a>
+                <a th:href="@{/cliente/editar-perfil(id=__${session.usuariosession.id}__)}" th:if="${session.usuariosession != null}"class="btn btn-primary btn-xl text-uppercase">Configura tu perfil</a>
+                <a th:href="@{/prestamo/form(id=__${session.usuariosession.id}__)}" th:if="${session.usuariosession != null}"class="btn btn-primary btn-xl text-uppercase">Prestamo</a>
+            </div>
+        </header>
+       
+        <footer  th:replace="/fragments/footer :: footer">
+           
+        </footer>
+      
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+      
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    
+    </body>
+</html>

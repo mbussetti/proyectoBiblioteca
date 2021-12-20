@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="/fragments/head :: head"></head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav th:replace="/fragments/navbar :: nav"></nav>
+        <!-- Masthead-->
+        <header th:replace="/fragments/header :: header"></header>
+        <!-- Services-->
+        <section class="page-section" id="contact2">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Nuevo Libro</h2>
+                    
+                </div>
+              
+                <form  action="/libro/save" method="POST"  enctype="multipart/form-data" >
+                    <div class="row align-items-stretch mb-5">
+                      
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" type="number" name="isbn" th:value="${isbn}" placeholder="Ingresa el ISBN del libro"  />
+                           
+                                <input class="form-control" type="text" name="titulo" th:value="${titulo}" placeholder="Ingresa el titulo del libro"/>
+                               
+                                <input class="form-control" type="number" name="anio" th:value="${anio}" placeholder="Ingresa el año del libro" />
+                               
+                                <label  class="form-label">Autor</label>
+                                <select class="form-select" name="idAutor" >
+                                <option th:each="a : ${autores}" th:text="${a.nombre}" th:value="${a.id}"></option>
+                                </select>
+ 
+                                <label  class="form-label">Editorial</label>
+                                <select class="form-select"  name="idEditorial">
+                                <option th:each="e : ${editoriales}" th:text="${e.nombre}" th:value="${e.id}"></option>
+                                </select>
+      
+                                <input class="form-control" type="number" name="ejemplares" th:value="${ejemplares}" placeholder="Ingresa los ejemplares del libro"  />
+                                
+                            <div class="form-group form-group-textarea mb-md-0">
+                                
+                                <textarea class="form-control"  name="sinopsis" th:value="${sinapsis}"  placeholder="sinopsis del libro *" ></textarea>
+                               
+                            </div>
+                             <div class="form-group">
+                               
+                                <input  type="file" class="form-control" name="archivo"    placeholder="Ingresa una foto del libro" />
+                                
+                            </div>    
+                        </div>
+                            
+                    </div>
+                  
+                   <br/><button type="submit" class="btn btn-primary">Registra el libro</button>
+                </form>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer  th:replace="/fragments/footer :: footer">
+           
+        </footer>
+      
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+      
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    
+    </body>
+</html>
+

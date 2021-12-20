@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="/fragments/head :: head"></head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav th:replace="/fragments/navbar :: nav"></nav>
+        <!-- Masthead-->
+        <header th:replace="/fragments/header :: header"></header>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Biblioteca</h2>
+                    <h3 class="section-subheading text-muted">Hechale un vistazo a nuestros libros mas populares!</h3>
+                   
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Libros</h4>
+                        <p class="text-muted">Aqui encontraras nuestra extensa lista de libros de BookZone! </p>
+                       <a href="/libro/list">EXPLORAR!</a>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Autores</h4>
+                        <p class="text-muted">Busca tu libro por tu Autor favorito!</p>
+                        <button type="button" class="btn btn-primary btn-xl text-uppercase disabled"><a th:href="@{/autor/lista}">EXPLORAR!</a></button>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Editoriales</h4>
+                        <p class="text-muted">Recorre las las mejores Editoriales!</p>
+                        <button type="button" class="btn btn-primary btn-xl text-uppercase disabled"><a th:href="@{/editorial/lista}">EXPLORAR!</a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+       
+       
+        <!-- Footer-->
+        <footer  th:replace="/fragments/footer :: footer">
+           
+        </footer>
+      
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+      
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+    
+    </body>
+</html>
